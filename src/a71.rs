@@ -1,7 +1,10 @@
 // Way too long words
 // https://codeforces.com/contest/71/problem/A
 
-// If a word is longer than 10 letters, we will print the first letter, lenght of the word - 2, and the last letter.
+/*
+* If a word is longer than 10 letters, we will print the first letter, lenght of the
+* word - 2, and the last letter.
+*/
 
 pub fn main() {
     let mut input = String::new();
