@@ -2,31 +2,19 @@
 // https://codeforces.com/problemset/problem/110/A
 
 /*
-* simply treat the input as a string and iterate over each char.
-* if we find any char other that 4 and 7, we immidiately break the iteration
-* if no other char found than we return YES
-*/
-
-/*
-* we will check if the iteration contains both 4 and 7.
-* otherwise it's not a nearly lucky number.
-* and then we check if it has no other digits.
+*we will iterate and count the number of 4 and 7
+*if the count is 4 or 7. then it's nearly lucky number.
 */
 
 fn is_near_luck(num: &str) -> bool {
-    // it has both 4 & 7
-    if !(num.contains('4') && num.contains('7')) {
-        return false;
-    }
-
-    // it doesn't have anything else
-    for x in num.chars() {
-        if x != '4' && x != '7' {
-            return false;
+    let mut n = 0;
+    num.chars().for_each(|c| {
+        if c == '4' || c == '7' {
+            n += 1
         }
-    }
+    });
 
-    true
+    n == 4 || n == 7
 }
 
 pub fn main() {
