@@ -9,7 +9,8 @@
 
 fn is_near_luck(num: &str) -> bool {
     for x in num.chars() {
-        if x != '4' && x != '7' {
+        // if x != '4' && x != '7' {
+        if x != '4' || x != '7' {
             return false;
         }
     }
