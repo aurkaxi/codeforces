@@ -7,13 +7,25 @@
 * if no other char found than we return YES
 */
 
+/*
+* we will check if the iteration contains both 4 and 7.
+* otherwise it's not a nearly lucky number.
+* and then we check if it has no other digits.
+*/
+
 fn is_near_luck(num: &str) -> bool {
+    // it has both 4 & 7
+    if !(num.contains('4') && num.contains('7')) {
+        return false;
+    }
+
+    // it doesn't have anything else
     for x in num.chars() {
-        // if x != '4' && x != '7' {
-        if x != '4' || x != '7' {
+        if x != '4' && x != '7' {
             return false;
         }
     }
+
     true
 }
 
